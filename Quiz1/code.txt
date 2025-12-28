@@ -1,0 +1,21 @@
+def main():
+    students = ["Alice", "Bob", "Charlie", "David"]
+    attendance = {}
+
+    print("Enter attendance for each student: (P = Present, A = Absent)")
+
+    for student in students:
+        while True:
+            status = input(f"{student}: ").strip().upper()
+            if status in ['P', 'A']:
+                attendance[student] = "Present" if status == 'P' else "Absent"
+                break
+            else:
+                print("Invalid input. Please enter P or A.")
+
+    print("\nAttendance Summary:")
+    for student, status in attendance.items():
+        print(f"{student}: {status}")
+
+if _name_ == "_main_":
+    main()
